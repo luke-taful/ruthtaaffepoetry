@@ -34,19 +34,18 @@ jobs:
           node-version: 20
           cache: 'pnpm'
 
-      # 4️⃣ Install dependencies
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        working-directory: ./rtp
 
-      # 5️⃣ Build static Next.js site
       - name: Build static site
         run: pnpm run build
+        working-directory: ./rtp
 
-      # 6️⃣ Upload the output folder for deployment
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./rtp/out
 
   deploy:
     environment:
