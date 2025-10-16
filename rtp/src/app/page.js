@@ -7,7 +7,7 @@ export default function Home() {
       <main className={styles.main}>
         <Image
           className={styles.logo}
-          src={`${process.env.NODE_ENV === 'production' ? '/rtp' : ''}/next.svg`}
+          src={`${process.env.NODE_ENV === 'production' ? '/rtp/public' : ''}/next.svg`}
 
           alt="Next.js logo"
           width={180}
