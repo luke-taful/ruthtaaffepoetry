@@ -17,26 +17,32 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # 1️⃣ Checkout your code
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2️⃣ Install pnpm (this is critical — must come BEFORE setup-node)
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9  # or whatever version you use locally
+
+      # 3️⃣ Setup Node and enable pnpm cache
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9  # or your project’s pnpm version
-
+      # 4️⃣ Install dependencies
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # 5️⃣ Build static Next.js site
       - name: Build static site
         run: pnpm run build
 
+      # 6️⃣ Upload the output folder for deployment
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
