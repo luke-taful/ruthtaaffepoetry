@@ -29,7 +29,7 @@ export default function Home() {
           >
             <Image
               className={styles.logo}
-              src="/rtp/vercel.svg"
+              src="/ruthtaaffepoetry/vercel.svg"
               alt="Vercel logomark"
               width={20}
               height={20}
@@ -54,7 +54,7 @@ export default function Home() {
         >
           <Image
             aria-hidden
-            src="/file.svg"
+            src="/ruthtaaffepoetry/file.svg"
             alt="File icon"
             width={16}
             height={16}
@@ -68,26 +68,12 @@ export default function Home() {
         >
           <Image
             aria-hidden
-            src="/window.svg"
+            src="/ruthtaaffepoetry/window.svg"
             alt="Window icon"
             width={16}
             height={16}
           />
           Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
         </a>
       </footer>
     </div>
